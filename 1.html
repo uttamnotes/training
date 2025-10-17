@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Advanced HTML Concepts Demonstration Page">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Advanced HTML Demo Page">
+  <meta property="og:description" content="An HTML5 example covering advanced HTML features like forms, multimedia, tables, and accessibility.">
+  <title>Advanced HTML Concepts Demo</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header, nav, section, article, footer {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    header h1 { color: #0077cc; }
+    nav a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #0077cc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    caption {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    form label {
+      display: block;
+      margin: 8px 0;
+    }
+    .highlight {
+      background-color: #e8f7ff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Advanced HTML5 Concepts Demo</h1>
+    <p>Explore semantic tags, advanced forms, multimedia, accessibility, and more.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#form">Form</a>
+    <a href="#media">Media</a>
+    <a href="#table">Table</a>
+    <a href="#data">Custom Data</a>
+  </nav>
+
+  <main>
+
+    <!-- Semantic Section -->
+    <section id="about">
+      <article>
+        <header><h2>About the Event</h2></header>
+        <p>Welcome to the <strong>Campus Tech Fest 2025</strong>, featuring coding, robotics, and AI challenges.</p>
+        <aside class="highlight">Did you know? This event is completely student-led!</aside>
+        <footer>Event Date: <time datetime="2025-10-25">October 25, 2025</time></footer>
+      </article>
+    </section>
+
+    <!-- Advanced Form -->
+    <section id="form">
+      <h2>Registration Form</h2>
+      <form>
+        <label>Full Name: <input type="text" name="name" required></label>
+        <label>Email: <input type="email" name="email" required></label>
+        <label>Age: <input type="number" name="age" min="18" max="60"></label>
+        <label>Choose Date: <input type="date" name="event_date"></label>
+        <label>Favorite Color: <input type="color" name="fav_color"></label>
+        <label>Rate Your Excitement: <input type="range" min="0" max="10"></label>
+
+        <label>Branch:
+          <input list="branches" name="branch">
+          <datalist id="branches">
+            <option value="CSE">
+            <option value="ECE">
+            <option value="ME">
+            <option value="CIVIL">
+          </datalist>
+        </label>
+
+        <input type="submit" value="Register">
+      </form>
+    </section>
+
+    <!-- Multimedia Section -->
+    <section id="media">
+      <h2>Event Trailer</h2>
+      <video controls width="400">
+        <source src="event_trailer.mp4" type="video/mp4">
+        <track src="captions_en.vtt" kind="subtitles" srclang="en" label="English">
+        Your browser does not support the video tag.
+      </video>
+
+      <p>Listen to our <em>Tech Anthem</em> below:</p>
+      <audio controls>
+        <source src="anthem.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio>
+    </section>
+
+    <!-- Table Section -->
+    <section id="table">
+      <h2>Event Schedule</h2>
+      <table>
+        <caption>Tech Fest Schedule</caption>
+        <thead>
+          <tr><th>Day</th><th>Event</th><th>Coordinator</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mon</td><td>Code Marathon</td><td>Ravi Kumar</td></tr>
+          <tr><td>Tue</td><td>AI Workshop</td><td>Priya Sharma</td></tr>
+          <tr><td>Wed</td><td>Robotics Race</td><td>Vikas Patil</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Custom Data Example -->
+    <section id="data">
+      <h2>Top Performers</h2>
+      <div data-student="Ananya" data-score="95" class="highlight">Ananya — Top Scorer</div>
+      <div data-student="Rahul" data-score="92" class="highlight">Rahul — Runner Up</div>
+    </section>
+
+    <!-- Accessibility Example -->
+    <section>
+      <h2>Accessibility Demo</h2>
+      <button aria-label="Play promotional video">▶</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Campus Tech Fest | <a href="brochure.pdf" download="TechFestBrochure.pdf">Download Brochure</a></p>
+  </footer>
+
+</body>
+</html>
