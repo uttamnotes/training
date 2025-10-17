@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Accordion Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-area {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 60%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: none;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .accordion {
+      width: 60%;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .accordion-header {
+      background-color: #f1f1f1;
+      cursor: pointer;
+      padding: 15px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background-color: #e2e2e2;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      background-color: white;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Dynamic Accordion Example</h2>
+
+  <div class="input-area">
+    <textarea id="accordionInput" placeholder="Enter each accordion item on a new line..."></textarea><br>
+    <button onclick="generateAccordion()">Generate Accordion</button>
+  </div>
+
+  <div id="accordionContainer" class="accordion"></div>
+
+  <script>
+    function generateAccordion() {
+      const input = document.getElementById('accordionInput').value.trim();
+      const lines = input.split('\n').filter(line => line.trim() !== '');
+      const container = document.getElementById('accordionContainer');
+      container.innerHTML = '';
+
+      lines.forEach((line, index) => {
+        const item = document.createElement('div');
+        item.className = 'accordion-item';
+
+        const header = document.createElement('div');
+        header.className = 'accordion-header';
+        header.textContent = `Section ${index + 1}: ${line}`;
+
+        const content = document.createElement('div');
+        content.className = 'accordion-content';
+        content.textContent = `This is the content for "${line}". You can customize this text as needed.`;
+
+        header.addEventListener('click', () => {
+          const isOpen = content.style.display === 'block';
+          document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+          content.style.display = isOpen ? 'none' : 'block';
+        });
+
+        item.appendChild(header);
+        item.appendChild(content);
+        container.appendChild(item);
+      });
+    }
+  </script>
+
+</body>
+</html>
