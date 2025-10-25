@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Data Table</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2f3, #8e9eab);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .table-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 700px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    thead {
+      background-color: #34495e;
+      color: white;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 18px;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tbody tr {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: slideIn 0.8s ease;
+    }
+
+    tbody tr:hover {
+      background-color: #dff9fb;
+      transform: scale(1.02);
+    }
+
+    th {
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      color: #2c3e50;
+    }
+
+    tfoot {
+      background-color: #34495e;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* ✨ Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <h2>📊 Monthly Sales Report - 2025</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Units Sold</th>
+          <th>Unit Price ($)</th>
+          <th>Total Revenue ($)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Smartphone X</td>
+          <td>Electronics</td>
+          <td>320</td>
+          <td>699</td>
+          <td>223,680</td>
+        </tr>
+        <tr>
+          <td>Wireless Earbuds</td>
+          <td>Accessories</td>
+          <td>540</td>
+          <td>129</td>
+          <td>69,660</td>
+        </tr>
+        <tr>
+          <td>Laptop Pro</td>
+          <td>Computers</td>
+          <td>120</td>
+          <td>1,299</td>
+          <td>155,880</td>
+        </tr>
+        <tr>
+          <td>Smartwatch S</td>
+          <td>Wearables</td>
+          <td>250</td>
+          <td>249</td>
+          <td>62,250</td>
+        </tr>
+        <tr>
+          <td>Gaming Console Z</td>
+          <td>Entertainment</td>
+          <td>180</td>
+          <td>499</td>
+          <td>89,820</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align:right;">Total Revenue</td>
+          <td>$601,290</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+</html>
